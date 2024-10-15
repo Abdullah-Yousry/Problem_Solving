@@ -1,0 +1,30 @@
+/*
+If n is odd and greater than 1, so n is odd divisor for itself then print "YES" 
+If n is even 
+    
+*/
+#include<bits/stdc++.h>
+using namespace std;
+int t;
+long long n;
+int main(){
+    cin >> t;
+    while(t--){
+        cin >> n;
+        if(n % 2 == 1 && n > 1){ // If n is odd AND greater than 1
+            cout << "YES\n";
+        }
+        else{ // If n is even
+            while(n > 1){ // As long as n greater than 1 enter in this while
+                if(n % 2 == 1){ // If n becomes dosen't divisable by 2 then there's an odd divisor
+                    cout << "YES\n"; 
+                    break; // Exit
+                }
+                n /= 2;
+            }
+            if(n == 1){
+                cout << "NO\n";
+            }
+        }
+    }
+}
